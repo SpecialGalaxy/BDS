@@ -25,10 +25,7 @@
 <header>
   <h1>🎮 Game Top-Up Store</h1>
   <p>Fast delivery • Secure • Professional</p>
-  <div style="margin-top:10px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-    <a href="https://m.me/YOUR_PAGE" target="_blank" style="background:#22c55e;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">Messenger</a>
-    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" style="background:#16a34a;color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">WhatsApp</a>
-  </div>
+  
 </header>
 
 <div class="container">
@@ -98,8 +95,15 @@
   }
 
   function order(item) {
-    const msg = encodeURIComponent('I want to buy: ' + item);
-    window.open('https://wa.me/91XXXXXXXXXX?text=' + msg, '_blank');
+    alert('You selected: ' + item + '
+Please contact admin to complete purchase.');
+  }
+
+  function searchItems() {
+    let input = document.getElementById('search').value.toLowerCase();
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.display = card.innerText.toLowerCase().includes(input) ? 'block' : 'none';
+    });
   }
 
   function searchItems() {
